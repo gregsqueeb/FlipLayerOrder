@@ -1,7 +1,6 @@
 var onRun = function(context) {
     var doc = context.document
     var selection = context.selection
-    var newLayers = []
 
     if (selection.count() < 2) {
         doc.showMessage("Please select more than 1 layer")
