@@ -1,0 +1,23 @@
+var onRun = function(context) {
+    var doc = context.document
+    var selection = context.selection
+    var newLayers = []
+
+    if (selection.count() < 2) {
+        doc.showMessage("Please select more than 1 layer")
+        return
+
+    } else if (selection.count() > 1) {
+        for (var i=0; i < (selection.count()); i++) {
+          doc.currentPage().deselectAllLayers()
+          selection[i].setIsSelected(true)
+          for (var j=i; j < (selection.count() - 1); j++) {
+            [NSApp sendAction:'moveForward:' to:nil from:doc]
+          }
+        }
+        for (var b = 0; b < selection.count(); b++) {
+            selection[b].setIsSelected(true);
+        }
+    }
+
+};

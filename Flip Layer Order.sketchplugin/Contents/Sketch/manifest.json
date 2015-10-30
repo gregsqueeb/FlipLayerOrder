@@ -1,0 +1,25 @@
+{
+  "name" : "Flip Layer Order",
+  "description" : "Flip the order of selected layers",
+  "author": "Greg Mathews",
+  "authorEmail" : "gregdmathews@gmail.com",
+  "version": 1.0,
+  "identifier": "com.gregdmathews.layer-flip",
+  "compatibleVersion": 3.3,
+  "commands" : [
+    {
+      "script" : "script.cocoascript",
+      "handler" : "onRun",
+      "shortcut" : "control i",
+      "name" : "Flip Layer Order",
+      "identifier" : "flip-layer-order"
+    }
+  ],
+  "menu" : {
+    "isRoot": true,
+    "items" : [
+      "flip-layer-order"
+    ],
+    "title" : "Flip Layer Order"
+  }
+}
